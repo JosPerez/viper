@@ -6,22 +6,35 @@
 //  Copyright © 2019 banregio. All rights reserved.
 //
 import Foundation
-protocol PresenterLogin: class {
-    func loginWithData(data: Login)
+protocol PresenterData: class {
+    func callWebService(fromApi apiString: String, fields: [String])
 }
 class PrstLogin {
-    weak var delegateLogin: PresenterLogin?
+    weak var delegateLogin: PresenterData?
     var viewLogin: VwLogin?
+    var interactor = IrtrLogin()
     func attachView(view: VwLogin) {
         self.viewLogin = view
+        interactor.initWithPresenter(presenter: self)
     }
     func deattach() {
         self.viewLogin = nil
     }
-    func loginSuccess() {
-        self.viewLogin?.showError(errorMessage: LoginError.PasswordInvalid)
+    func showError(error: LoginError) {
+        self.viewLogin?.showError(errorMessage: error)
     }
-    func callWebService(withLoginData data: Login) {
-        ///Llamamos al interactor.
+    func callWebService(fromApi apiString: String, fields: [String]) {
+        if !apiString.isEmpty {
+            self.interactor.callWebService(fromApi: apiString, fields: fields)
+        } else {
+            self.showError(error: .UserInvalid)
+        }
     }
+}
+extension PrstLogin: interactorData {
+    func showContries(info: [contryInfo]) {
+        self.viewLogin?.showContries(info: info)
+    }
+    
+    
 }

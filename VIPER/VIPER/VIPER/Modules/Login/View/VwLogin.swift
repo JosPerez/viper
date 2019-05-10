@@ -11,8 +11,9 @@ import UIKit
 protocol VwLogin {
     func showHUD()
     func hideHUD()
-    func showSuccess()
+    func showContries(info: [contryInfo])
     func showError(errorMessage: LoginError)
+    func showAlertWithTextField(title: String, message: String, tableView: UITableViewController, completion:@escaping (_ result: String) -> Void)
 }
 
 enum LoginError: Error {

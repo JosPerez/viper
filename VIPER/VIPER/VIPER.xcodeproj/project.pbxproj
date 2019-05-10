@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1418241C228491CD0021BA8F /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418241B228491CD0021BA8F /* CountryTableViewController.swift */; };
+		1418241E228499260021BA8F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1418241D228499260021BA8F /* DetailViewController.xib */; };
+		1418242022849BD70021BA8F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418241F22849BD70021BA8F /* DetailViewController.swift */; };
 		2E089D0D228095D600AA4000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E089D0C228095D600AA4000 /* AppDelegate.swift */; };
 		2E089D0F228095D600AA4000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E089D0E228095D600AA4000 /* ViewController.swift */; };
 		2E089D14228095D800AA4000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E089D13228095D800AA4000 /* Assets.xcassets */; };
 		2E089D17228095D800AA4000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E089D15228095D800AA4000 /* LaunchScreen.storyboard */; };
 		2E089D22228095D800AA4000 /* VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E089D21228095D800AA4000 /* VIPERTests.swift */; };
-		2E089D2D2280960800AA4000 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E089D2C2280960800AA4000 /* ViewController.xib */; };
 		2E089D3D22809BF600AA4000 /* EntLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E089D3C22809BF600AA4000 /* EntLogin.swift */; };
 		2E089D3F22809F3200AA4000 /* VwLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E089D3E22809F3200AA4000 /* VwLogin.swift */; };
 		2E089D412280A0C700AA4000 /* RtgLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E089D402280A0C700AA4000 /* RtgLogin.swift */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1418241B228491CD0021BA8F /* CountryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
+		1418241D228499260021BA8F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1418241F22849BD70021BA8F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2E089D09228095D600AA4000 /* VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E089D0C228095D600AA4000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E089D0E228095D600AA4000 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +45,6 @@
 		2E089D1D228095D800AA4000 /* VIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E089D21228095D800AA4000 /* VIPERTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTests.swift; sourceTree = "<group>"; };
 		2E089D23228095D800AA4000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E089D2C2280960800AA4000 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		2E089D3C22809BF600AA4000 /* EntLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntLogin.swift; sourceTree = "<group>"; };
 		2E089D3E22809F3200AA4000 /* VwLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VwLogin.swift; sourceTree = "<group>"; };
 		2E089D402280A0C700AA4000 /* RtgLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RtgLogin.swift; sourceTree = "<group>"; };
@@ -119,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				2E089D3B22809A2F00AA4000 /* General */,
-				2E089D38228099C600AA4000 /* Transferencias */,
 				2E089D372280998C00AA4000 /* Login */,
 			);
 			path = Modules;
@@ -130,6 +133,9 @@
 			children = (
 				2E089D39228099FC00AA4000 /* Login */,
 				2E089D0E228095D600AA4000 /* ViewController.swift */,
+				1418241B228491CD0021BA8F /* CountryTableViewController.swift */,
+				1418241D228499260021BA8F /* DetailViewController.xib */,
+				1418241F22849BD70021BA8F /* DetailViewController.swift */,
 			);
 			path = Classess;
 			sourceTree = "<group>";
@@ -138,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				2E089D3A22809A0F00AA4000 /* Login */,
-				2E089D2C2280960800AA4000 /* ViewController.xib */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -192,13 +197,6 @@
 				2E089D322280995000AA4000 /* Interactor */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		2E089D38228099C600AA4000 /* Transferencias */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transferencias;
 			sourceTree = "<group>";
 		};
 		2E089D39228099FC00AA4000 /* Login */ = {
@@ -305,8 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E089D17228095D800AA4000 /* LaunchScreen.storyboard in Resources */,
-				2E089D2D2280960800AA4000 /* ViewController.xib in Resources */,
 				2E089D14228095D800AA4000 /* Assets.xcassets in Resources */,
+				1418241E228499260021BA8F /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,10 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1418242022849BD70021BA8F /* DetailViewController.swift in Sources */,
 				2E089D432280A2A900AA4000 /* PrstLogin.swift in Sources */,
 				2E089D452280A59800AA4000 /* IrtrLogin.swift in Sources */,
 				2E089D3D22809BF600AA4000 /* EntLogin.swift in Sources */,
 				2E089D412280A0C700AA4000 /* RtgLogin.swift in Sources */,
+				1418241C228491CD0021BA8F /* CountryTableViewController.swift in Sources */,
 				2E089D0F228095D600AA4000 /* ViewController.swift in Sources */,
 				2E089D3F22809F3200AA4000 /* VwLogin.swift in Sources */,
 				2E089D0D228095D600AA4000 /* AppDelegate.swift in Sources */,

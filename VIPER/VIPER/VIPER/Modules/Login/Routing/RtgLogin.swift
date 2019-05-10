@@ -9,10 +9,14 @@
 import UIKit
 
 class RtgLogin: NSObject {
-    static func navigateToMenu(from: UIViewController, loginData: Login) {
-        from.navigationController?.pushViewController(ViewController(nibName: "ViewController", bundle: Bundle.main), animated: true)
+    static func navigateToCountryList(from: UIViewController, loginData: [contryInfo]) {
+        let countryView = CountryTableViewController()
+        countryView.countryList = loginData
+        from.navigationController?.pushViewController(countryView, animated: true)
     }
-    static func sendBack(from: UIViewController) {
-        
+    static func navigateToDetailView(from: UIViewController, info: contryInfo) {
+        let detailView = DetailViewController(nibName: "DetailViewController", bundle: Bundle.main)
+        detailView.countryInfo = info
+        from.navigationController?.pushViewController(detailView, animated: true)
     }
 }
