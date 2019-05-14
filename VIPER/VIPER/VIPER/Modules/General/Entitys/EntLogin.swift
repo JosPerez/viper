@@ -45,7 +45,6 @@ public struct contryInfo: Codable {
 public struct lenguaje: Codable {
     ///Enum con los codigos de idioma
     enum codigoIdioma: String, CodingKey {
-        case iso = "iso639_1"
         case nativeName = "nativeName"
     }
     ///Como se abrevia el idioma
@@ -55,7 +54,6 @@ public struct lenguaje: Codable {
     ///init del decoder
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: codigoIdioma.self)
-        iso = try values.decode(String.self, forKey: .iso)
         nativeName = try values.decode(String.self, forKey: .nativeName)
     }
 }

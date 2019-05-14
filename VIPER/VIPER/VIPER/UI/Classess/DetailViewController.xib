@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="VIPER" customModuleProvider="target">
             <connections>
+                <outlet property="imgFlag" destination="rGc-zQ-WKN" id="R9p-ic-pzp"/>
                 <outlet property="lblCapital" destination="9et-ZO-6Xp" id="ElA-mz-Il8"/>
                 <outlet property="lblIdioma" destination="2eb-Eg-6d9" id="3wV-pr-1tW"/>
                 <outlet property="lblNombre" destination="8pR-RW-nuF" id="d8X-SH-wBE"/>

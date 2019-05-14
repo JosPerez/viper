@@ -9,10 +9,12 @@ import UIKit
 class ViewController: UITableViewController {
     let opciones = ["Todos los paises soportados", "Escoge un pais para ver detalles"]
     let presenter = PrstLogin()
+    var infoCountry = [contryInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         presenter.attachView(view: self)
+        navigationItem.title = "Menu"
     }
     func login() {
         //let entidadLogin = Login(user: "", password: "")
@@ -33,31 +35,39 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let url = "https://restcountries.eu/rest/v2/all"
-            self.presenter.callWebService(fromApi: url, fields: ["name","capital"])
+            self.presenter.callWebService(fromApi: url, fields: ["name","capital","languages","flag"])
         }else  {
             showAlertWithTextField(title: "Buscar pais", message: "Introduce el texto", tableView: self, completion:{
                 result in
                 print(result)
                 let url = "https://restcountries.eu/rest/v2/name/"+result
-                self.presenter.callWebService(fromApi: url, fields: ["name","capital","languages"])
+                self.presenter.callWebService(fromApi: url, fields: ["name","capital","languages","flag"])
             })
         }
     }
 }
 extension ViewController: VwLogin {
+    func showImage(image: UIImage) {
+        RtgLogin.navigateToDetailView(from: self, info: infoCountry[0], flagImage: image)
+    }
     func showContries(info: [contryInfo]) {
         if info.count > 1 {
             RtgLogin.navigateToCountryList(from: self, loginData: info)
         }else {
-            RtgLogin.navigateToDetailView(from: self, info: info[0])
+            if let imgString = info[0].flag {
+                infoCountry = info
+                createSpinnerView()
+                self.presenter.getImage(fromURL: imgString)
+            } else {
+                print("Not flag")
+                createSpinnerView()
+                RtgLogin.navigateToDetailView(from: self, info: info[0], flagImage: nil)
+            }
         }
     }
     func showHUD() {
-        
     }
-    
     func hideHUD() {
-        
     }
     func showError(errorMessage: LoginError) {
         switch errorMessage {
@@ -81,5 +91,22 @@ extension ViewController: VwLogin {
         })
         alert.addAction(alertAction)
         tableView.present(alert, animated: true, completion: nil)
+    }
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+        
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+        
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+            // then remove the spinner view controller
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
     }
 }

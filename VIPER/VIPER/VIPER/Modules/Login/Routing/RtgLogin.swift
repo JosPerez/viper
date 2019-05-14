@@ -14,9 +14,12 @@ class RtgLogin: NSObject {
         countryView.countryList = loginData
         from.navigationController?.pushViewController(countryView, animated: true)
     }
-    static func navigateToDetailView(from: UIViewController, info: contryInfo) {
+    static func navigateToDetailView(from: UIViewController, info: contryInfo, flagImage: UIImage?) {
         let detailView = DetailViewController(nibName: "DetailViewController", bundle: Bundle.main)
-        detailView.countryInfo = info
-        from.navigationController?.pushViewController(detailView, animated: true)
+        DispatchQueue.main.async {
+            detailView.countryInfo = info
+            detailView.imageFlag = flagImage
+            from.navigationController?.pushViewController(detailView, animated: true)
+        }
     }
 }

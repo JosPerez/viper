@@ -9,17 +9,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
     @IBOutlet weak fileprivate var lblNombre: UILabel!
     @IBOutlet weak fileprivate var lblCapital: UILabel!
     @IBOutlet weak fileprivate var lblIdioma: UILabel!
+    @IBOutlet weak fileprivate var imgFlag: UIImageView!
     var countryInfo:contryInfo?
+    var imageFlag:UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         lblNombre.text = countryInfo?.name
         lblCapital.text = countryInfo?.capital
         lblIdioma.text = countryInfo?.languages?[0].nativeName
-        // Do any additional setup after loading the view.
+        imgFlag.image = imageFlag
+        navigationItem.title = "Vista detalle"
     }
-
 }

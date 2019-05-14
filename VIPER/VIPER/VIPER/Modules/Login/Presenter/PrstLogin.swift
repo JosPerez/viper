@@ -5,9 +5,10 @@
 //  Created by Abraham Abreu on 5/6/19.
 //  Copyright © 2019 banregio. All rights reserved.
 //
-import Foundation
+import UIKit
 protocol PresenterData: class {
     func callWebService(fromApi apiString: String, fields: [String])
+    func getImage(withURL url:String)
 }
 class PrstLogin {
     weak var delegateLogin: PresenterData?
@@ -30,11 +31,21 @@ class PrstLogin {
             self.showError(error: .UserInvalid)
         }
     }
+    func getImage(fromURL urlString: String){
+        if !urlString.isEmpty {
+            self.interactor.getImage(withURL: urlString)
+        } else {
+            self.showError(error: .UserInvalid)
+        }
+    }
 }
 extension PrstLogin: interactorData {
+    
+    func showFlagImage(image: UIImage) {
+        self.viewLogin?.showImage(image: image)
+    }
+    
     func showContries(info: [contryInfo]) {
         self.viewLogin?.showContries(info: info)
     }
-    
-    
 }
